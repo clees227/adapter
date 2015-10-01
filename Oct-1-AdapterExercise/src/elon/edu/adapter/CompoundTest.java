@@ -8,12 +8,22 @@ import org.junit.Test;
 
 public class CompoundTest {
 
+	private ChemicalCompound water;
+	private ChemicalCompound benzene;
+	private ChemicalCompound alcohol;
+
 	@Before
 	public void setUp() throws Exception {
+		water = new Compound("Water");
+	    benzene = new Compound("Benzene");
+	    alcohol = new Compound("Alcohol");
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		water = null; 
+		benzene = null;
+		alcohol = null;
 	}
 
 	@Test
