@@ -1,11 +1,16 @@
 package elon.edu.adapter;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Compound implements ChemicalCompound {
 	ChemicalDataBank db;
 	String molecule;
+	NumberFormat format;
 	public Compound(String type){
 		db = new ChemicalDataBank();
 		molecule = type;
+		format = new DecimalFormat("#0.0");
 	}
 	
 	@Override
@@ -22,12 +27,12 @@ public class Compound implements ChemicalCompound {
 
 	@Override
 	public double getBoilingPoint() {
-		return db.getCriticalPoint(molecule, "B");
+		return Double.parseDouble(format.format(db.getCriticalPoint(molecule, "B")));
 	}
 
 	@Override
 	public double getMeltingPoint() {
-		return db.getCriticalPoint(molecule, "M");
+		return Double.parseDouble(format.format(db.getCriticalPoint(molecule, "M")));
 	}
 
 	@Override
@@ -37,7 +42,7 @@ public class Compound implements ChemicalCompound {
 
 	@Override
 	public double getMolecularWeight() {
-		return db.getMolecularWeight(molecule);
+		return Double.parseDouble(format.format(db.getMolecularWeight(molecule)));
 	}
 
 }

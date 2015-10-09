@@ -28,27 +28,33 @@ public class CompoundTest {
 
 	@Test
 	public void testDisplay() {
-		fail("Not yet implemented");
+		String output = "";
+		output += "Compound: Water ------\n";
+		output += "Formula: "+water.getMolecularFormula()+"\n";
+		output += "Weight: "+water.getMolecularWeight()+"\n";
+		output += "Melting Point: "+water.getMeltingPoint()+"\n";
+		output += "Boiling Point: "+water.getBoilingPoint();
+		assertEquals(output, water.display());
 	}
 
 	@Test
 	public void testGetBoilingPoint() {
-		fail("Not yet implemented");
+		assertEquals(100.0, water.getBoilingPoint(), 0.01);
 	}
 
 	@Test
 	public void testGetMeltingPoint() {
-		fail("Not yet implemented");
+		assertEquals(water.getMeltingPoint(), 0.0, 0.01);
 	}
 
 	@Test
 	public void testGetMolecularFormula() {
-		fail("Not yet implemented");
+		assertEquals(water.getMolecularFormula(), "H2O");
 	}
 
 	@Test
 	public void testGetMolecularWeight() {
-		fail("Not yet implemented");
+		assertEquals(water.getMolecularWeight(), 18.0, 0.01);
 	}
 
 }
